@@ -22,6 +22,10 @@ public class ColaboradorService {
 
     public ColaboradorModel salvar(ColaboradorModel colaboradorModel) {
 
+        Pattern simbolosPattern = Pattern.compile("[^a-zA-Z0-9_]");
+        Integer totalAditivos = 0;
+        Integer totalDeducoes = 0;
+
         Integer numeroCaracteres = 0;
         Integer calculoNumeroCaracteres = 0;
 
@@ -29,7 +33,7 @@ public class ColaboradorService {
         Integer calculoNumeroCaracteresMaiusculas = 0;
 
         Integer numeroCaracteresMinusculas = 0;
-        Integer calculonumeroCaracteresMinusculas = 0;
+        Integer calculoNumeroCaracteresMinusculas = 0;
 
         Integer totalNumeros = 0;
         Integer calculoTotalNumeros = 0;
@@ -37,17 +41,11 @@ public class ColaboradorService {
         Integer totalSimbolos = 0;
         Integer calculoTotalSimbolos = 0;
 
-        Pattern simbolosPattern = Pattern.compile("[^a-zA-Z0-9_]");
-
         Integer totalNumerosSimbolos = 0;
         Integer calculoTotalNumerosSimbolos = 0;
 
         Integer calculoSomenteLetras = 0;
-
         Integer calculoSomenteNumeros = 0;
-
-        Integer totalAditivos = 0;
-        Integer totalDeducoes = 0;
 
         for (int i = 0; i < colaboradorModel.getSenha().length(); i++) {
 
@@ -61,7 +59,7 @@ public class ColaboradorService {
 
             if (Character.isLowerCase(colaboradorModel.getSenha().charAt(i))) {
                 numeroCaracteresMinusculas++;
-                calculonumeroCaracteresMinusculas = (colaboradorModel.getSenha().length() - numeroCaracteresMinusculas) * 2;
+                calculoNumeroCaracteresMinusculas = (colaboradorModel.getSenha().length() - numeroCaracteresMinusculas) * 2;
             }
 
             if (Character.isDigit(colaboradorModel.getSenha().charAt(i))) {
@@ -75,12 +73,12 @@ public class ColaboradorService {
             }
 
             if (i > 0 && i < colaboradorModel.getSenha().length() - 1) {
-                if (Character.isDigit(colaboradorModel.getSenha().charAt(i)) || simbolosPattern.matcher(Character.toString(colaboradorModel.getSenha().charAt(i))).matches()) {
+                if (Character.isDigit(colaboradorModel.getSenha().charAt(i)) || 
+                        simbolosPattern.matcher(Character.toString(colaboradorModel.getSenha().charAt(i))).matches()) {
                     totalNumerosSimbolos++;
                     calculoTotalNumerosSimbolos = totalNumerosSimbolos * 2;
                 }
             }
-
         }
 
         if (colaboradorModel.getSenha().matches("[A-Za-z]+")) {
@@ -92,11 +90,11 @@ public class ColaboradorService {
         }
 
         totalAditivos = (calculoNumeroCaracteres + calculoNumeroCaracteresMaiusculas
-                + calculonumeroCaracteresMinusculas + calculoTotalNumeros + calculoTotalSimbolos + calculoTotalNumerosSimbolos);
+                + calculoNumeroCaracteresMinusculas + calculoTotalNumeros + calculoTotalSimbolos + calculoTotalNumerosSimbolos);
 
         String senhaCriptografada = encoder.encode(colaboradorModel.getSenha());
         colaboradorModel.setSenha(senhaCriptografada);
-        
+
         totalDeducoes = (calculoSomenteLetras + calculoSomenteNumeros);
         colaboradorModel.setScore_senha((totalAditivos - totalDeducoes) + "%");
 
