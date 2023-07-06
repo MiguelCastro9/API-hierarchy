@@ -2,11 +2,13 @@ package com.api.dto.response;
 
 import com.api.model.ColaboradorModel;
 import com.api.model.GestorModel;
+import io.swagger.v3.oas.annotations.media.Schema;
 
 /**
  *
  * @author Miguel Castro
  */
+@Schema(name = "Colaborador - response")
 public class ColaboradorResponse {
 
     private Long id;

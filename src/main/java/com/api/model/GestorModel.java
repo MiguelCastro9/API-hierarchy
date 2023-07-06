@@ -1,5 +1,6 @@
 package com.api.model;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.*;
@@ -9,6 +10,7 @@ import javax.persistence.*;
  * @author Miguel Castro
  */
 @Entity
+@Schema(name = "Gestor - model")
 public class GestorModel implements Serializable {
 
     private static final long serialVersionUID = 2L;

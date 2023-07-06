@@ -4,6 +4,8 @@ import com.api.dto.request.GestorRequest;
 import com.api.dto.response.GestorResponse;
 import com.api.model.GestorModel;
 import com.api.service.GestorService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import java.util.List;
 import java.util.stream.Collectors;
 import javax.validation.Valid;
@@ -22,6 +24,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/gestor")
+@Tag(name = "Gestor")
 public class GestorController {
     
     
@@ -29,6 +32,7 @@ public class GestorController {
     private GestorService gestorService;
     
     @GetMapping("/listar")
+    @Operation(description = "Listar gestor")
     public ResponseEntity<List<GestorResponse>> listar() {
 
         return new ResponseEntity<List<GestorResponse>>(
@@ -38,6 +42,7 @@ public class GestorController {
     }
 
     @PostMapping("/salvar")
+    @Operation(description = "Salvar gestor")
     public ResponseEntity<GestorResponse> salvar(@Valid @RequestBody GestorRequest gestorRequest) {
 
         GestorModel gestorModel = gestorService.salvar(gestorRequest.converterGestorRequestParaEntidade());

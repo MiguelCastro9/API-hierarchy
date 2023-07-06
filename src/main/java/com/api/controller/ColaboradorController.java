@@ -4,6 +4,8 @@ import com.api.dto.request.ColaboradorRequest;
 import com.api.dto.response.ColaboradorResponse;
 import com.api.model.ColaboradorModel;
 import com.api.service.ColaboradorService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import java.util.List;
 import java.util.stream.Collectors;
 import javax.validation.Valid;
@@ -22,12 +24,14 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/colaborador")
+@Tag(name = "Colaborador")
 public class ColaboradorController {
 
     @Autowired
     private ColaboradorService colaboradorService;
 
     @GetMapping("/listar")
+    @Operation(description = "Listar colaborador")
     public ResponseEntity<List<ColaboradorResponse>> listar() {
 
         return new ResponseEntity<List<ColaboradorResponse>>(
@@ -37,6 +41,7 @@ public class ColaboradorController {
     }
 
     @PostMapping("/salvar")
+    @Operation(description = "Salvar colaborador")
     public ResponseEntity<ColaboradorResponse> salvar(@Valid @RequestBody ColaboradorRequest colaboradorRequest) {
 
         ColaboradorModel colaboradorModel = colaboradorService.salvar(colaboradorRequest.converterColaboradorRequestParaEntidade());

@@ -2,6 +2,7 @@ package com.api.dto.request;
 
 import com.api.model.ColaboradorModel;
 import com.api.model.GestorModel;
+import io.swagger.v3.oas.annotations.media.Schema;
 import javax.validation.constraints.NotBlank;
 import org.hibernate.validator.constraints.Length;
 
@@ -9,6 +10,7 @@ import org.hibernate.validator.constraints.Length;
  *
  * @author Miguel Castro
  */
+@Schema(name = "Colaborador - request")
 public class ColaboradorRequest {
 
     @NotBlank(message = "Nome é obrigatório.")

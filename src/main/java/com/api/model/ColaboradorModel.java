@@ -1,5 +1,6 @@
 package com.api.model;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.Serializable;
 import javax.persistence.*;
 
@@ -8,6 +9,7 @@ import javax.persistence.*;
  * @author Miguel Castro
  */
 @Entity
+@Schema(name = "Colaborador - model")
 public class ColaboradorModel implements Serializable {
 
     private static final long serialVersionUID = 1L;
