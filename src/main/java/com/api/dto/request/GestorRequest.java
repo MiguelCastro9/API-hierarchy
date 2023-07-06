@@ -3,6 +3,8 @@ package com.api.dto.request;
 import com.api.model.ColaboradorModel;
 import com.api.model.GestorModel;
 import java.util.List;
+import javax.validation.constraints.NotBlank;
+import org.hibernate.validator.constraints.Length;
 
 /**
  *
@@ -10,8 +12,12 @@ import java.util.List;
  */
 public class GestorRequest {
 
+    @NotBlank(message = "Nome é obrigatório.")
+    @Length(min = 3, max = 20, message = "Nome requer no mínimo {min} e no máximo {max} caracteres.")
     private String nome;
 
+    @NotBlank(message = "Senha é obrigatório.")
+    @Length(min = 3, max = 20, message = "Senha requer no mínimo {min} e no máximo {max} caracteres.")
     private String senha;
 
     private String score_senha;

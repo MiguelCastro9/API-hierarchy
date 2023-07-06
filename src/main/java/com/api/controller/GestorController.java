@@ -6,6 +6,7 @@ import com.api.model.GestorModel;
 import com.api.service.GestorService;
 import java.util.List;
 import java.util.stream.Collectors;
+import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -37,7 +38,7 @@ public class GestorController {
     }
 
     @PostMapping("/salvar")
-    public ResponseEntity<GestorResponse> salvar(@RequestBody GestorRequest gestorRequest) {
+    public ResponseEntity<GestorResponse> salvar(@Valid @RequestBody GestorRequest gestorRequest) {
 
         GestorModel gestorModel = gestorService.salvar(gestorRequest.converterGestorRequestParaEntidade());
         return new ResponseEntity<GestorResponse>(GestorResponse.converterEntidadeParaGestorResponse(gestorModel), HttpStatus.OK);

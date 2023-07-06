@@ -6,6 +6,7 @@ import com.api.model.ColaboradorModel;
 import com.api.service.ColaboradorService;
 import java.util.List;
 import java.util.stream.Collectors;
+import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -36,7 +37,7 @@ public class ColaboradorController {
     }
 
     @PostMapping("/salvar")
-    public ResponseEntity<ColaboradorResponse> salvar(@RequestBody ColaboradorRequest colaboradorRequest) {
+    public ResponseEntity<ColaboradorResponse> salvar(@Valid @RequestBody ColaboradorRequest colaboradorRequest) {
 
         ColaboradorModel colaboradorModel = colaboradorService.salvar(colaboradorRequest.converterColaboradorRequestParaEntidade());
         return new ResponseEntity<ColaboradorResponse>(ColaboradorResponse.converterEntidadeParaColaboradorResponse(colaboradorModel), HttpStatus.OK);
