@@ -2,6 +2,7 @@ package com.api.service;
 
 import com.api.model.GestorModel;
 import com.api.repository.GestorRepository;
+import java.util.List;
 import java.util.regex.Pattern;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -19,6 +20,11 @@ public class GestorService {
 
     @Autowired
     private BCryptPasswordEncoder encoder;
+    
+        public List<GestorModel> listar() {
+        
+        return gestorRepository.findAll();
+    }
 
     public GestorModel salvar(GestorModel gestorModel) {
 

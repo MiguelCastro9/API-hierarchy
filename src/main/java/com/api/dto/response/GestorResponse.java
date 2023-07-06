@@ -1,51 +1,39 @@
-package com.api.model;
+package com.api.dto.response;
 
-import java.io.Serializable;
+import com.api.model.ColaboradorModel;
+import com.api.model.GestorModel;
 import java.util.List;
-import javax.persistence.*;
 
 /**
  *
  * @author Miguel Castro
  */
-@Entity
-public class GestorModel implements Serializable {
+public class GestorResponse {
 
-    private static final long serialVersionUID = 2L;
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(nullable = false)
     private Long id;
 
-    @Column(nullable = false)
     private String nome;
 
-    @Column(nullable = false)
     private String senha;
 
-    @Column(nullable = false)
     private String score_senha;
 
-    @OneToMany(mappedBy = "gestor", cascade = CascadeType.ALL)
     private List<ColaboradorModel> colaboradores;
 
-    public GestorModel() {
+    public GestorResponse() {
     }
 
-    public GestorModel(Long id, String nome, String senha, String score_senha, List<ColaboradorModel> colaboradores) {
+    public GestorResponse(Long id, String nome, String senha, String score_senha, List<ColaboradorModel> colaboradores) {
         this.id = id;
         this.nome = nome;
         this.senha = senha;
         this.score_senha = score_senha;
         this.colaboradores = colaboradores;
     }
-    
-    public GestorModel(String nome, String senha, String score_senha, List<ColaboradorModel> colaboradores) {
-        this.nome = nome;
-        this.senha = senha;
-        this.score_senha = score_senha;
-        this.colaboradores = colaboradores;
+
+    public static GestorResponse converterEntidadeParaGestorResponse(GestorModel gestorModel) {
+        return new GestorResponse(gestorModel.getId(), gestorModel.getNome(),
+                gestorModel.getSenha(), gestorModel.getScore_senha(), gestorModel.getColaboradores());
     }
 
     public Long getId() {

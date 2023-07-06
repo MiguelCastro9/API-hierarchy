@@ -1,39 +1,28 @@
-package com.api.model;
+package com.api.dto.response;
 
-import java.io.Serializable;
-import javax.persistence.*;
+import com.api.model.ColaboradorModel;
+import com.api.model.GestorModel;
 
 /**
  *
  * @author Miguel Castro
  */
-@Entity
-public class ColaboradorModel implements Serializable {
+public class ColaboradorResponse {
 
-    private static final long serialVersionUID = 1L;
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(nullable = false)
     private Long id;
 
-    @Column(nullable = false)
     private String nome;
 
-    @Column(nullable = false)
     private String senha;
 
-    @Column(nullable = false)
     private String score_senha;
-
-    @ManyToOne
-    @JoinColumn(name = "gestor_id", nullable = false)
+    
     private GestorModel gestor;
 
-    public ColaboradorModel() {
+    public ColaboradorResponse() {
     }
 
-    public ColaboradorModel(Long id, String nome, String senha, String score_senha, GestorModel gestor) {
+    public ColaboradorResponse(Long id, String nome, String senha, String score_senha, GestorModel gestor) {
         this.id = id;
         this.nome = nome;
         this.senha = senha;
@@ -41,11 +30,9 @@ public class ColaboradorModel implements Serializable {
         this.gestor = gestor;
     }
 
-    public ColaboradorModel(String nome, String senha, String score_senha, GestorModel gestor) {
-        this.nome = nome;
-        this.senha = senha;
-        this.score_senha = senha;
-        this.gestor = gestor;
+    public static ColaboradorResponse converterEntidadeParaColaboradorResponse(ColaboradorModel colaboradorModel) {
+        return new ColaboradorResponse(colaboradorModel.getId(), colaboradorModel.getNome(), 
+                colaboradorModel.getSenha(), colaboradorModel.getScore_senha(), colaboradorModel.getGestor());
     }
 
     public Long getId() {

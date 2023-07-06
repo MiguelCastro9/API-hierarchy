@@ -2,6 +2,7 @@ package com.api.service;
 
 import com.api.model.ColaboradorModel;
 import com.api.repository.ColaboradorRepository;
+import java.util.List;
 import java.util.regex.Pattern;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -19,6 +20,11 @@ public class ColaboradorService {
 
     @Autowired
     private BCryptPasswordEncoder encoder;
+    
+    public List<ColaboradorModel> listar() {
+        
+        return colaboradorRepository.findAll();
+    }
 
     public ColaboradorModel salvar(ColaboradorModel colaboradorModel) {
 
