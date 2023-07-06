@@ -27,6 +27,7 @@ public class ColaboradorModel implements Serializable {
     private String score_senha;
 
     @ManyToOne
+    @JoinColumn(name = "gestor_id", nullable = false)
     private GestorModel gestor;
 
     public ColaboradorModel() {

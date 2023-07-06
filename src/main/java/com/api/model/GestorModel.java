@@ -28,7 +28,6 @@ public class GestorModel implements Serializable {
     private String score_senha;
 
     @OneToMany(mappedBy = "gestor", cascade = CascadeType.ALL)
-    @Column(nullable = false)
     private List<ColaboradorModel> colaboradores;
 
     public GestorModel() {
