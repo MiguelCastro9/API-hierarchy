@@ -1,6 +1,5 @@
 package com.api.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.io.Serializable;
 import javax.persistence.*;
 
@@ -24,16 +23,20 @@ public class ColaboradorModel implements Serializable {
     @Column(nullable = false)
     private String senha;
 
+    @Column(nullable = false)
+    private String score_senha;
+
     @ManyToOne
     private GestorModel gestor;
 
     public ColaboradorModel() {
     }
 
-    public ColaboradorModel(Long id, String nome, String senha) {
+    public ColaboradorModel(Long id, String nome, String senha, String score_senha) {
         this.id = id;
         this.nome = nome;
         this.senha = senha;
+        this.score_senha = senha;
     }
 
     public Long getId() {
@@ -58,6 +61,14 @@ public class ColaboradorModel implements Serializable {
 
     public void setSenha(String senha) {
         this.senha = senha;
+    }
+
+    public String getScore_senha() {
+        return score_senha;
+    }
+
+    public void setScore_senha(String score_senha) {
+        this.score_senha = score_senha;
     }
 
     public GestorModel getGestor() {
