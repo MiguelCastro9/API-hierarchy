@@ -1,8 +1,6 @@
 ## Overview
 
-Cadastro dos colaboradores em uma hierarquia, considerando suas senhas com base nas métricas de força disponíveis no site: http://www.passwordmeter.com/
-
-
+Registration of employees in a hierarchy, considering their passwords based on the strength metrics available on the website: http://www.passwordmeter.com/
 
 ## Execution
 
