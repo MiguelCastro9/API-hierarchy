@@ -109,7 +109,7 @@ function listarGestores() {
                 if (score_senha >= 31 && score_senha <= 59) {
                     cellScoreSenha.classList.add("cor-amarela");
                 }
-                if (score_senha >= 60 && score_senha <= 100) {
+                if (score_senha >= 60) {
                     cellScoreSenha.classList.add("cor-verde");
                 }
             });
@@ -172,7 +172,7 @@ function listarColaboradores() {
         if (score_senha >= 31 && score_senha <= 59) {
             cellScoreSenha.classList.add("cor-amarela");
         }
-        if (score_senha >= 60 && score_senha <= 100) {
+        if (score_senha >= 60) {
             cellScoreSenha.classList.add("cor-verde");
         }
           
