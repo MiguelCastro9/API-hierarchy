@@ -8,7 +8,21 @@
 </head>
 <body>
     <h1>API - Hierarchy</h1>
-    <hr>
+    <fieldset>
+        <legend>INFO</legend>
+        <p>Score de senha baseada neste <a href="http://www.passwordmeter.com/" target="_blank">site</a>.</p>
+        <p>Regras implementadas:</p>
+        <ul>
+            <li>Número de caracteres</li>
+            <li>Letras maiúsculas</li>
+            <li>Letras minúsculas</li>
+            <li>Números</li>
+            <li>Símbolos</li>
+            <li>Números ou símbolos do meio</li>
+            <li>Somente letras</li>
+            <li>Apenas números</li>
+        </ul>
+    </fieldset>
     <fieldset>
         <legend>GESTORES</legend>
         <label for="gestor">Gestor:</label>
@@ -17,7 +31,10 @@
         <br><br>
         <label for="senhaGestor">Senha:</label>
         <br>
-        <input type="password" id="senhaGestor" name="senhaGestor" maxlength="20">
+        <div class="password-input">
+            <input type="password" id="senhaGestor" name="senhaGestor" maxlength="20">
+            <button class="password-toggle" data-target="senhaGestor" type="button">Mostrar</button>
+        </div>
         <br><br>
         <button id="salvarGestor">Salvar gestor</button>
     </fieldset>
@@ -35,7 +52,10 @@
         <br><br>
         <label for="senhaColaborador">Senha:</label>
         <br>
-        <input type="password" id="senhaColaborador" name="senhaColaborador" maxlength="20">
+        <div class="password-input">
+            <input type="password" id="senhaColaborador" name="senhaColaborador" maxlength="20">
+            <button class="password-toggle" data-target="senhaColaborador" type="button">Mostrar</button>
+        </div>
         <br><br>
         <button id="salvarColaborador">Salvar colaborador</button>
     </fieldset>

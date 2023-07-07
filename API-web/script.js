@@ -4,6 +4,21 @@ function atualizarPagina() {
 
 document.getElementById("atualizar").addEventListener("click", atualizarPagina);
 
+document.querySelectorAll(".password-toggle").forEach(button => {
+  button.addEventListener("click", function() {
+    var targetId = this.getAttribute("data-target");
+    var targetInput = document.getElementById(targetId);
+
+    if (targetInput.type === "password") {
+      targetInput.type = "text";
+      this.textContent = "Ocultar";
+    } else {
+      targetInput.type = "password";
+      this.textContent = "Mostrar";
+    }
+  });
+});
+
 document.getElementById("salvarGestor").addEventListener("click", function() {
     var nome = document.getElementById("gestor").value;
     var senha = document.getElementById("senhaGestor").value;
