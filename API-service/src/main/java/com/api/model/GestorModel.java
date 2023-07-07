@@ -29,25 +29,21 @@ public class GestorModel implements Serializable {
     @Column(nullable = false)
     private String score_senha;
 
-    @OneToMany(mappedBy = "gestor", cascade = CascadeType.ALL)
-    private List<ColaboradorModel> colaboradores;
 
     public GestorModel() {
     }
 
-    public GestorModel(Long id, String nome, String senha, String score_senha, List<ColaboradorModel> colaboradores) {
+    public GestorModel(Long id, String nome, String senha, String score_senha) {
         this.id = id;
         this.nome = nome;
         this.senha = senha;
         this.score_senha = score_senha;
-        this.colaboradores = colaboradores;
     }
     
-    public GestorModel(String nome, String senha, String score_senha, List<ColaboradorModel> colaboradores) {
+    public GestorModel(String nome, String senha, String score_senha) {
         this.nome = nome;
         this.senha = senha;
         this.score_senha = score_senha;
-        this.colaboradores = colaboradores;
     }
 
     public Long getId() {
@@ -80,13 +76,5 @@ public class GestorModel implements Serializable {
 
     public void setScore_senha(String score_senha) {
         this.score_senha = score_senha;
-    }
-
-    public List<ColaboradorModel> getColaboradores() {
-        return colaboradores;
-    }
-
-    public void setColaboradores(List<ColaboradorModel> colaboradores) {
-        this.colaboradores = colaboradores;
     }
 }

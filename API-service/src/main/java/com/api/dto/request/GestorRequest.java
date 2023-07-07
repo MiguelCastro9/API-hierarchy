@@ -24,10 +24,8 @@ public class GestorRequest {
 
     private String score_senha;
 
-    private List<ColaboradorModel> colaboradores;
-
     public GestorModel converterGestorRequestParaEntidade() {
-        return new GestorModel(nome, senha, score_senha, colaboradores);
+        return new GestorModel(nome, senha, score_senha);
     }
 
     public String getNome() {
@@ -52,13 +50,5 @@ public class GestorRequest {
 
     public void setScore_senha(String score_senha) {
         this.score_senha = score_senha;
-    }
-
-    public List<ColaboradorModel> getColaboradores() {
-        return colaboradores;
-    }
-
-    public void setColaboradores(List<ColaboradorModel> colaboradores) {
-        this.colaboradores = colaboradores;
     }
 }

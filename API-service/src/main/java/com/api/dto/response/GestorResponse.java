@@ -20,22 +20,19 @@ public class GestorResponse {
 
     private String score_senha;
 
-    private List<ColaboradorModel> colaboradores;
-
     public GestorResponse() {
     }
 
-    public GestorResponse(Long id, String nome, String senha, String score_senha, List<ColaboradorModel> colaboradores) {
+    public GestorResponse(Long id, String nome, String senha, String score_senha) {
         this.id = id;
         this.nome = nome;
         this.senha = senha;
         this.score_senha = score_senha;
-        this.colaboradores = colaboradores;
     }
 
     public static GestorResponse converterEntidadeParaGestorResponse(GestorModel gestorModel) {
         return new GestorResponse(gestorModel.getId(), gestorModel.getNome(),
-                gestorModel.getSenha(), gestorModel.getScore_senha(), gestorModel.getColaboradores());
+                gestorModel.getSenha(), gestorModel.getScore_senha());
     }
 
     public Long getId() {
@@ -68,13 +65,5 @@ public class GestorResponse {
 
     public void setScore_senha(String score_senha) {
         this.score_senha = score_senha;
-    }
-
-    public List<ColaboradorModel> getColaboradores() {
-        return colaboradores;
-    }
-
-    public void setColaboradores(List<ColaboradorModel> colaboradores) {
-        this.colaboradores = colaboradores;
     }
 }
