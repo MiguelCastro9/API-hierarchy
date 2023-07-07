@@ -18,3 +18,15 @@ table {
     display: block;
     margin: 0 auto;
 }
+
+.cor-vermelha {
+    color: red;
+}
+
+.cor-amarela {
+    color: goldenrod;
+}
+
+.cor-verde {
+    color: green;
+}

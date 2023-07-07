@@ -83,10 +83,20 @@ function listarGestores() {
 
                 var row = tbody.insertRow();
                 var cellNome = row.insertCell(0);
-                var cellScore_senha = row.insertCell(1);
+                var cellScoreSenha = row.insertCell(1);
 
                 cellNome.innerHTML = nome;
-                cellScore_senha.innerHTML = score_senha;
+                cellScoreSenha.innerHTML = score_senha + '%';
+
+                if (score_senha >= 0 && score_senha <= 30) {
+                    cellScoreSenha.classList.add("cor-vermelha");
+                }
+                if (score_senha >= 31 && score_senha <= 59) {
+                    cellScoreSenha.classList.add("cor-amarela");
+                }
+                if (score_senha >= 60 && score_senha <= 100) {
+                    cellScoreSenha.classList.add("cor-verde");
+                }
             });
         })
         .catch(error => {
@@ -129,7 +139,7 @@ function listarColaboradores() {
   
         colaboradores.forEach(colaborador => {
           var nome = colaborador.nome;
-          var score_senha = colaborador.score_senha;
+          var score_senha = colaborador.score_senha
           var gestor = colaborador.gestor.nome;
   
           var row = tbody.insertRow();
@@ -138,8 +148,19 @@ function listarColaboradores() {
           var cellGestor = row.insertCell(2);
   
           cellNome.innerHTML = nome;
-          cellScoreSenha.innerHTML = score_senha;
+          cellScoreSenha.innerHTML = score_senha + '%';
           cellGestor.innerHTML = gestor;
+
+          if (score_senha >= 0 && score_senha <= 30) {
+            cellScoreSenha.classList.add("cor-vermelha");
+        }
+        if (score_senha >= 31 && score_senha <= 59) {
+            cellScoreSenha.classList.add("cor-amarela");
+        }
+        if (score_senha >= 60 && score_senha <= 100) {
+            cellScoreSenha.classList.add("cor-verde");
+        }
+          
         });
       })
       .catch(error => {
