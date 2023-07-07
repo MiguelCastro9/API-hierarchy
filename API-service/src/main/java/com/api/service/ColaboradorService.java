@@ -102,7 +102,7 @@ public class ColaboradorService {
         colaboradorModel.setSenha(senhaCriptografada);
 
         totalDeducoes = (calculoSomenteLetras + calculoSomenteNumeros);
-        colaboradorModel.setScore_senha((totalAditivos - totalDeducoes) + "%");
+        colaboradorModel.setScore_senha(totalAditivos - totalDeducoes);
 
         return colaboradorRepository.save(colaboradorModel);
     }

@@ -21,7 +21,7 @@ public class ColaboradorRequest {
     @Length(min = 3, max = 20, message = "Senha requer no mínimo {min} e no máximo {max} caracteres.")
     private String senha;
 
-    private String score_senha;
+    private Integer score_senha;
 
     private GestorModel gestor;
 
@@ -45,11 +45,11 @@ public class ColaboradorRequest {
         this.senha = senha;
     }
 
-    public String getScore_senha() {
+    public Integer getScore_senha() {
         return score_senha;
     }
 
-    public void setScore_senha(String score_senha) {
+    public void setScore_senha(Integer score_senha) {
         this.score_senha = score_senha;
     }
 

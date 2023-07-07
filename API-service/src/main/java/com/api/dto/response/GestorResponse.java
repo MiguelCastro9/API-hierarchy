@@ -1,9 +1,7 @@
 package com.api.dto.response;
 
-import com.api.model.ColaboradorModel;
 import com.api.model.GestorModel;
 import io.swagger.v3.oas.annotations.media.Schema;
-import java.util.List;
 
 /**
  *
@@ -18,12 +16,12 @@ public class GestorResponse {
 
     private String senha;
 
-    private String score_senha;
+    private Integer score_senha;
 
     public GestorResponse() {
     }
 
-    public GestorResponse(Long id, String nome, String senha, String score_senha) {
+    public GestorResponse(Long id, String nome, String senha, Integer score_senha) {
         this.id = id;
         this.nome = nome;
         this.senha = senha;
@@ -59,11 +57,11 @@ public class GestorResponse {
         this.senha = senha;
     }
 
-    public String getScore_senha() {
+    public Integer getScore_senha() {
         return score_senha;
     }
 
-    public void setScore_senha(String score_senha) {
+    public void setScore_senha(Integer score_senha) {
         this.score_senha = score_senha;
     }
 }

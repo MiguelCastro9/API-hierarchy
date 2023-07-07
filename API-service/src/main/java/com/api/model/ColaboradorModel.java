@@ -26,7 +26,7 @@ public class ColaboradorModel implements Serializable {
     private String senha;
 
     @Column(nullable = false)
-    private String score_senha;
+    private Integer score_senha;
 
     @ManyToOne
     @JoinColumn(name = "gestor_id", nullable = false)
@@ -35,7 +35,7 @@ public class ColaboradorModel implements Serializable {
     public ColaboradorModel() {
     }
 
-    public ColaboradorModel(Long id, String nome, String senha, String score_senha, GestorModel gestor) {
+    public ColaboradorModel(Long id, String nome, String senha, Integer score_senha, GestorModel gestor) {
         this.id = id;
         this.nome = nome;
         this.senha = senha;
@@ -43,10 +43,10 @@ public class ColaboradorModel implements Serializable {
         this.gestor = gestor;
     }
 
-    public ColaboradorModel(String nome, String senha, String score_senha, GestorModel gestor) {
+    public ColaboradorModel(String nome, String senha, Integer score_senha, GestorModel gestor) {
         this.nome = nome;
         this.senha = senha;
-        this.score_senha = senha;
+        this.score_senha = score_senha;
         this.gestor = gestor;
     }
 
@@ -74,11 +74,11 @@ public class ColaboradorModel implements Serializable {
         this.senha = senha;
     }
 
-    public String getScore_senha() {
+    public Integer getScore_senha() {
         return score_senha;
     }
 
-    public void setScore_senha(String score_senha) {
+    public void setScore_senha(Integer score_senha) {
         this.score_senha = score_senha;
     }
 

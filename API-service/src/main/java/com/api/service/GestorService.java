@@ -102,7 +102,7 @@ public class GestorService {
         gestorModel.setSenha(senhaCriptografada);
 
         totalDeducoes = (calculoSomenteLetras + calculoSomenteNumeros);
-        gestorModel.setScore_senha((totalAditivos - totalDeducoes) + "%");
+        gestorModel.setScore_senha(totalAditivos - totalDeducoes);
 
         return gestorRepository.save(gestorModel);
     }

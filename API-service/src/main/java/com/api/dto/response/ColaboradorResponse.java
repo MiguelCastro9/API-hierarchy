@@ -17,14 +17,14 @@ public class ColaboradorResponse {
 
     private String senha;
 
-    private String score_senha;
+    private Integer score_senha;
     
     private GestorModel gestor;
 
     public ColaboradorResponse() {
     }
 
-    public ColaboradorResponse(Long id, String nome, String senha, String score_senha, GestorModel gestor) {
+    public ColaboradorResponse(Long id, String nome, String senha, Integer score_senha, GestorModel gestor) {
         this.id = id;
         this.nome = nome;
         this.senha = senha;
@@ -61,11 +61,11 @@ public class ColaboradorResponse {
         this.senha = senha;
     }
 
-    public String getScore_senha() {
+    public Integer getScore_senha() {
         return score_senha;
     }
 
-    public void setScore_senha(String score_senha) {
+    public void setScore_senha(Integer score_senha) {
         this.score_senha = score_senha;
     }
 

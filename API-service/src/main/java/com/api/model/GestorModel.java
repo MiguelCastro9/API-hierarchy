@@ -27,20 +27,20 @@ public class GestorModel implements Serializable {
     private String senha;
 
     @Column(nullable = false)
-    private String score_senha;
+    private Integer score_senha;
 
 
     public GestorModel() {
     }
 
-    public GestorModel(Long id, String nome, String senha, String score_senha) {
+    public GestorModel(Long id, String nome, String senha, Integer score_senha) {
         this.id = id;
         this.nome = nome;
         this.senha = senha;
         this.score_senha = score_senha;
     }
     
-    public GestorModel(String nome, String senha, String score_senha) {
+    public GestorModel(String nome, String senha, Integer score_senha) {
         this.nome = nome;
         this.senha = senha;
         this.score_senha = score_senha;
@@ -70,11 +70,11 @@ public class GestorModel implements Serializable {
         this.senha = senha;
     }
 
-    public String getScore_senha() {
+    public Integer getScore_senha() {
         return score_senha;
     }
 
-    public void setScore_senha(String score_senha) {
+    public void setScore_senha(Integer score_senha) {
         this.score_senha = score_senha;
     }
 }
