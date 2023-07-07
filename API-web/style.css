@@ -1,0 +1,20 @@
+fieldset {
+    border: 1px solid black;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.tabelas-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+table {
+    text-align: center;
+}
+
+#atualizar {
+    display: block;
+    margin: 0 auto;
+}
