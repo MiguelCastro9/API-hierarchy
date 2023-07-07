@@ -17,4 +17,7 @@ with the <code>docker-compose up -d</code> command, and when the application is 
 
 ## Demo
 
+![gif01](https://github.com/MiguelCastro9/API-hierarchy/assets/56695817/46f42fef-1373-48f1-a2f8-edabdae48a87)
+
+
 ![image](https://github.com/MiguelCastro9/API-hierarchy/assets/56695817/16bc97ec-3d8f-4bd8-bb90-faf278571ef6)
