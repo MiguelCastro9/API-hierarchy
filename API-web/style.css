@@ -1,3 +1,11 @@
+nav {
+    background-color: teal;
+}
+
+.titulo-nav {
+    color: #fff !important;
+}
+
 fieldset {
     border: 1px solid black;
     padding: 10px;
@@ -33,4 +41,13 @@ footer {
 
 .cor-verde {
     color: green;
+}
+
+.custom-card {
+    height: 320px;
+}
+
+.overflow-scroll {
+    overflow: auto;
+    height: 100%;
 }

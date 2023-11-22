@@ -1,94 +1,150 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>API - Hierarchy</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <h1>API - Hierarchy</h1>
-    <fieldset>
-        <legend>INFO</legend>
-        <p>Score de senha baseada neste <a href="http://www.passwordmeter.com/" target="_blank">site</a>.</p>
-        <p>Regras implementadas:</p>
-        <ul>
-            <li>Número de caracteres</li>
-            <li>Letras maiúsculas</li>
-            <li>Letras minúsculas</li>
-            <li>Números</li>
-            <li>Símbolos</li>
-            <li>Números ou símbolos do meio</li>
-            <li>Somente letras</li>
-            <li>Apenas números</li>
-        </ul>
-    </fieldset>
-    <fieldset>
-        <legend>GESTORES</legend>
-        <label for="gestor">Gestor:</label>
-        <br>
-        <input type="text" id="gestor" name="gestor" maxlength="20">
-        <br><br>
-        <label for="senhaGestor">Senha:</label>
-        <br>
-        <div class="password-input">
-            <input type="password" id="senhaGestor" name="senhaGestor" maxlength="20">
-            <button class="password-toggle" data-target="senhaGestor" type="button">Mostrar</button>
-        </div>
-        <br><br>
-        <button id="salvarGestor">Salvar gestor</button>
-    </fieldset>
-    <br>
-    <fieldset>
-        <legend>COLABORADORES</legend>
-        <label for="selectGestor">Selecione o gestor:</label>
-        <select id="selectGestor" name="selectGestor">
-            <option value="" selected>selecione</option>
-        </select>
-        <br><br>
-        <label for="colaborador">Colaborador:</label>
-        <br>
-        <input type="text" id="colaborador" name="colaborador" maxlength="20">
-        <br><br>
-        <label for="senhaColaborador">Senha:</label>
-        <br>
-        <div class="password-input">
-            <input type="password" id="senhaColaborador" name="senhaColaborador" maxlength="20">
-            <button class="password-toggle" data-target="senhaColaborador" type="button">Mostrar</button>
-        </div>
-        <br><br>
-        <button id="salvarColaborador">Salvar colaborador</button>
-    </fieldset>
-    <hr>
-    <button id="atualizar">Atualizar tabelas</button>
-    <br><br>
-    <div class="tabelas-container">
-        <table id="tabelaGestores" border="1">
-            <thead>
-                <tr>
-                    <th>Nome</th>
-                    <th>Score de senha</th>
-                </tr>
-            </thead>
-            <tbody>
-            </tbody>
-        </table>
-        <table id="tabelaColaboradores" border="1">
-            <thead>
-                <tr>
-                    <th>Nome</th>
-                    <th>Score de Senha</th>
-                    <th>Gestor</th>
-                </tr>
-            </thead>
-            <tbody>
-            </tbody>
-        </table>
-    </div>
-    <br><hr>
-    <footer>
-        <p>&copy API Hierarchy - Miguel Castro</p>
-    </footer>
-    <script src="script.js"></script>
-</body>
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Study Challenge 04</title>
+      <link rel="stylesheet" href="style.css">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+   </head>
+   <body>
+      <header>
+         <nav class="navbar">
+            <div class="container-fluid">
+               <a class="navbar-brand titulo-nav" href="#">Study Challenge 04</a>
+            </div>
+         </nav>
+      </header>
+      <br>
+      <div class="d-flex flex-column vh-100">
+         <main role="main" class="layout-main flex-fill">
+            <div class="container">
+               <div class="row">
+                  <div class="col-sm-12">
+                     <div class="card custom-card">
+                        <div class="card-header">Infomações</div>
+                        <div class="card-body">
+                           <p>Score de senha baseada neste <a href="http://www.passwordmeter.com/" target="_blank">site</a>.</p>
+                           <p>Regras implementadas:</p>
+                           <ul>
+                              <li>Número de caracteres</li>
+                              <li>Letras maiúsculas</li>
+                              <li>Letras minúsculas</li>
+                              <li>Números</li>
+                              <li>Símbolos</li>
+                              <li>Números ou símbolos do meio</li>
+                              <li>Somente letras</li>
+                              <li>Apenas números</li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <br>
+               <div class="row">
+                  <div class="col-sm-6">
+                     <div class="card custom-card">
+                        <div class="card-header">Formulário de gestores</div>
+                        <div class="card-body">
+                           <form>
+                              <div class="row">
+                                 <div class="col-sm-6">
+                                    <label for="gestor">Gestor:</label>
+                                    <input type="text" id="gestor" name="gestor" class="form-control" required>
+                                 </div>
+                                 <div class="col-sm-6">
+                                    <label for="senhaGestor">Senha:</label>
+                                    <input type="password" id="senhaGestor" name="senhaGestor" class="form-control" required>
+                                 </div>
+                                 <div class="col-sm-6">
+                                    <br>
+                                    <button class="btn btn-success" type="button" id="salvarGestor">Salvar gestor</button>
+                                    &nbsp;
+                                    <button class="btn btn-secondary password-toggle" data-target="senhaGestor" type="button">Mostrar</button>
+                                 </div>
+                              </div>
+                           </form>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-sm-6">
+                     <div class="card custom-card">
+                        <div class="card-header">Formulário de colaboradores</div>
+                        <div class="card-body">
+                           <form>
+                              <div class="row">
+                                 <div class="col-sm-4">
+                                    <label for="selectGestor">Gestor associado:</label>
+                                    <select class="form-control" id="selectGestor" name="selectGestor">
+                                       <option value="" selected>selecione</option>
+                                    </select>
+                                 </div>
+                                 <div class="col-sm-4">
+                                    <label for="colaborador">Colaborador:</label>
+                                    <input type="text" id="colaborador" name="colaborador" class="form-control" required>
+                                 </div>
+                                 <div class="col-sm-4">
+                                    <label for="senhaColaborador">Senha:</label>
+                                    <input type="password" id="senhaColaborador" name="senhaColaborador" class="form-control" required>
+                                 </div>
+                                 <div class="col-sm-6">
+                                    <br>
+                                    <button class="btn btn-success" type="button" id="salvarColaborador">Salvar colaborador</button>
+                                    &nbsp;
+                                    <button class="btn btn-secondary password-toggle" data-target="senhaColaborador" type="button">Mostrar</button>
+                                 </div>
+                              </div>
+                           </form>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <br>
+               <hr>
+               <button type="button" id="atualizar" class="btn btn-secondary">Atualizar tabelas</button>
+               <br>
+               <div class="row">
+                  <div class="col-sm-6">
+                     <div class="card custom-card">
+                        <div class="card-header">Tabela de gestores</div>
+                        <div class="card-body overflow-scroll">
+                           <table id="tabelaGestores" class="text-center table table-striped table-hover table-responsive">
+                              <thead>
+                                 <tr>
+                                    <th scope="col">Gestor</th>
+                                    <th scope="col">Score de senha</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                              </tbody>
+                           </table>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-sm-6">
+                     <div class="card custom-card">
+                        <div class="card-header">Tabela de colaboradores</div>
+                        <div class="card-body overflow-scroll">
+                           <table id="tabelaColaboradores" class="text-center table table-striped table-hover table-responsive">
+                              <thead>
+                                 <tr>
+                                    <th scope="col">colaborador</th>
+                                    <th scope="col">Score de senha</th>
+                                    <th scope="col">Gestor associado</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                              </tbody>
+                           </table>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+      </div>
+      </main>
+      </div>
+      <script src="script.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+   </body>
 </html>
