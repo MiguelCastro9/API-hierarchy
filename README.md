@@ -7,7 +7,7 @@ Registration of employees in a hierarchy, considering their passwords based on t
 Tools:
 <li> Java 11 </li>
 <li> SpringBoot 2.7.13 </li>
-<li> SpringSecurity </li>
+<li> Spring Security </li>
 <li> Docker </li>
 <br>
 <strong>Back-end: </strong>
