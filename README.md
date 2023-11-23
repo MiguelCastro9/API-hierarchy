@@ -15,7 +15,3 @@ Import the project into an IDE of your choice, the IDE used in the development w
 so just build the application to download the dependencies that are managed by Maven,
 but first, Docker must be installed and the container images encoded in the <code>docker-compose.yml</code> file initialized, 
 with the <code>docker-compose up -d</code> command, and when the application is running, just access the link <code>http://localhost:8080/swagger-ui/index.html</code> to analyze the application's endpoints.
-
-## Demo
-
-https://github.com/MiguelCastro9/API-hierarchy/assets/56695817/b7f1c52f-1e5f-477a-867a-06416651875b
